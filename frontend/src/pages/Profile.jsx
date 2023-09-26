@@ -1,24 +1,29 @@
 import React, { useEffect } from 'react'
 import { Button, Card, Carousel, Col, Container, Row } from 'react-bootstrap'
 import { useDispatch, useSelector } from 'react-redux'
-import { Link, useNavigate } from 'react-router-dom'
+import {  useNavigate } from 'react-router-dom'
 import { ShowStudentActions } from '../redux/Actions/DataActions'
 import { TypeAnimation } from 'react-type-animation';
+import sir from "./../assets/img/sir.png";
 
 export default function Profile() {
   const dispatch = useDispatch()
  const { allstudents } = useSelector(state => state.allData)
 const navigate = useNavigate()
 
+useEffect(() =>{
+dispatch(ShowStudentActions() )
+}, [])
+
 const ExampleComponent = () => {
   return (
     <TypeAnimation
       sequence={[
-        'Student Profile', 
+        'Samrt school', 
         1000,
-        'Student Data',
-        2000,
         'Student Management',
+        2000,
+        'Samrt school',
         () => {
           console.log('Done typing!');
         }
@@ -30,12 +35,6 @@ const ExampleComponent = () => {
     />
   );
 };
-
-  useEffect(() =>{
-dispatch(ShowStudentActions() )
-  }, [])
-
-
 
   return (<>
   <Carousel>
@@ -61,16 +60,15 @@ dispatch(ShowStudentActions() )
         />
       </Carousel.Item>
     </Carousel>
-    <Container className='py-1'>
-      <Row>
-
+    <Container>
+<h1 className='text-center mt-4'>Welcome To</h1>
 <div className='text-center'><TypeAnimation
       sequence={[
-        'Student Profile', 
+        'Samrt school', 
         1000, 
-        'Student Data',
+        'Student Management',
         2000,
-        'Student Management', 
+        'Samrt School', 
         () => {
           console.log('success!'); 
         }
@@ -79,27 +77,45 @@ dispatch(ShowStudentActions() )
       cursor={true}
       repeat={Infinity}
       style={{ fontSize: '4em' }} 
-    /></div>
-{
-  allstudents.map(item =>  <Col className="col-sm-6 col-md-4 mb-3">
-  <Card>
-<Card.Body className='py-2'>
-<Card.Img className="img-fluid" src={item.Photo} alt=""/>
-</Card.Body>
-<Card.Footer>
-<h4>{item.Name}</h4>
-<p> class : {item.Class}</p>
-<Button className='w-100' 
-variant="outline-primary"
-onClick={e => navigate(`/details/${item.id}`)}
->Show Detalis</Button>
-</Card.Footer>
-  </Card>
-  </Col> 
-  )
-}
-      </Row>
-    </Container>
+      /></div>
+<p className='text-center mt-2'>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Impedit alias corrupti molestias doloremque aut consectetur reiciendis praesentium quis eos maiores reiciendis praesentium quis eos maiores.</p>
+
+<div className='flex-contendt'>
+        <img src={sir} width={100}  alt="" />
+</div>
+        <h2 className='text-center mt-2'>Dr. Lorem ipsum dolor.</h2>
+         <p className='text-center mt-2'>Edu. M.Com.,NET(JRF),SET,Ph.D.</p>
+      </Container>
+
+<Container >
+  <h4>Recently Added</h4>
+  <Row >
+    {allstudents.map(item => (
+      <Col key={item.id} xs={6} md={4} className="mb-4">
+        <Card style={{ width: '250px' }}>
+          <Card.Body>
+            <Card.Img className="img-fluid" src={item.photo} alt={item.photo} />
+          </Card.Body>
+          <Card.Footer>
+            <h6>{item.name}</h6>       
+            <p>class: {item.class}</p>
+            <Button className="w-100" variant="outline-primary btn-sm" onClick={e => navigate(`/details/${item.id}`)}>
+              Show Details
+            </Button>
+          </Card.Footer>
+        </Card>
+      </Col>
+    ))}
+  </Row>
+</Container>
+
+
+
+
+
+
+
+
 
   </>
   )

@@ -1,7 +1,7 @@
 import React, {useState} from 'react'
 import { useEffect } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
-import { useParams } from 'react-router-dom'
+import { useNavigate, useParams } from 'react-router-dom'
 import { RemoveDataActions, ShowSingleDataActions } from '../redux/Actions/DataActions'
 import { Button, Card, Col, Container, Modal, Offcanvas, Row } from "react-bootstrap";
 import { EditData } from '../components'
@@ -9,6 +9,8 @@ import { EditData } from '../components'
 export default function Details() {
   const {id} =  useParams()
   const dispatch =  useDispatch()
+const navigate = useNavigate()
+
   const { singleStudents,updateStudents,removeStudents } =  useSelector(state => state.allData)
   const [studentData, setstudentData] = useState({})
 
@@ -47,20 +49,20 @@ dispatch(ShowSingleDataActions(id))
  <Col className="col-sm-4 col-md-5">
   <Card style={{ width: '80%'}}>
 <div className='p-5'>
-                <Card.Img className="img-fluid" src={singleStudents.Photo} alt=""  style={{ height:'200px', width:'200px' }}/>
+                <Card.Img className="img-fluid" src={singleStudents.photo} alt=""  style={{ height:'200px', width:'200px' }}/>
 </div>
                 <div className=" py-0">
-               <h4 className='text-center'>Name: {singleStudents.Name}</h4>
+               <h4 className='text-center'>Name: {singleStudents.name}</h4>
                <br/>
                 </div>
                 <ul>
 <li>
 
-               <p>Class: {singleStudents.Class}</p>
+               <p>Class: {singleStudents.class}</p>
 </li>
                <li>
 
-               <p>Enrollment Date: {singleStudents.Enrollment_date}</p>
+               <p>Enrollment Date: {singleStudents.enrollment_date}</p>
                </li>
                 </ul>
   </Card>
@@ -71,13 +73,13 @@ dispatch(ShowSingleDataActions(id))
                <ul >
   <br/>
 <li>
-  <strong>Roll number</strong>  : {singleStudents.Roll_number}</li> <br/>
-<li><strong>Gender</strong> : {singleStudents.Gender}</li>  <br/>
-<li><strong>D.O.B</strong> : {singleStudents.B_day}</li>  <br/>
-<li><strong>Class</strong> : {singleStudents.Class}</li>  <br/>
-<li><strong>Gmail</strong> : {singleStudents.Gmail}</li>  <br/>
-<li><strong>Phone number</strong> : {singleStudents.Phone}</li>  <br/>
-<li><strong>Address</strong> : {singleStudents.Address}</li>  <br/>
+  <strong>Roll number</strong>  : {singleStudents.roll_number}</li> <br/>
+<li><strong>Gender</strong> : {singleStudents.gender}</li>  <br/>
+<li><strong>D.O.B</strong> : {singleStudents.b_day}</li>  <br/>
+<li><strong>Class</strong> : {singleStudents.class}</li>  <br/>
+<li><strong>Gmail</strong> : {singleStudents.gmail}</li>  <br/>
+<li><strong>Phone number</strong> : {singleStudents.phone}</li>  <br/>
+<li><strong>Address</strong> : {singleStudents.address}</li>  <br/>
                </ul>
 
             {/* </div> */}
@@ -90,6 +92,9 @@ dispatch(ShowSingleDataActions(id))
 
       <Button variant="primary" onClick={handleShowModal}>
         Delete
+      </Button>{' '}
+      <Button variant="primary" onClick={e => navigate("/")}>
+        Back To Profile Page
       </Button>
 
           </Col>

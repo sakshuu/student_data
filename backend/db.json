@@ -1,17 +1,228 @@
 {
   "students": [
     {
-      "Photo": "https://fadcdn.s3.ap-south-1.amazonaws.com/media/1090/Lead_image_48017.jpg",
-      "Name": "sanika shiv chavan",
-      "Gender": "male",
-      "B_day": "2001/09/20",
-      "Class": "6th-B",
-      "Roll_number": "10",
-      "Gmail": "sanika@gmail.com",
-      "Phone": "8787878787",
-      "Address": "Lorem ipsum, dolor sit amet consectetur adipisicing.",
-      "Enrollment_date": "2015/06/15",
-      "id": 1
+      "photo": "https://fadcdn.s3.ap-south-1.amazonaws.com/media/1090/Lead_image_48017.jpg",
+      "name": "sanika shiv chavan",
+      "gender": "female",
+      "b_day": "2001/09/20",
+      "class": "6th-B",
+      "roll_number": "10",
+      "gmail": "sanika@gmail.com",
+      "phone": "8787878787",
+      "address": "Lorem ipsum, dolor sit amet consectetur adipisicing.",
+      "enrollment_date": "2015/06/15",
+      "id": 2
+    },
+    {
+      "photo": "https://fadcdn.s3.ap-south-1.amazonaws.com/media/1090/Lead_image_48017.jpg",
+      "name": "sanika shiv chavan",
+      "gender": "female",
+      "b_day": "2001/09/20",
+      "class": "6th-B",
+      "roll_number": "10",
+      "gmail": "sanika@gmail.com",
+      "phone": "8787878787",
+      "address": "Lorem ipsum, dolor sit amet consectetur adipisicing.",
+      "enrollment_date": "2015/06/15",
+      "id": 3
+    },
+    {
+      "photo": "https://fadcdn.s3.ap-south-1.amazonaws.com/media/1090/Lead_image_48017.jpg",
+      "name": "sanika shiv chavan",
+      "gender": "female",
+      "b_day": "2001/09/20",
+      "class": "6th-B",
+      "roll_number": "10",
+      "gmail": "sanika@gmail.com",
+      "phone": "8787878787",
+      "address": "Lorem ipsum, dolor sit amet consectetur adipisicing.",
+      "enrollment_date": "2015/06/15",
+      "id": 4
+    },
+    {
+      "photo": "https://fadcdn.s3.ap-south-1.amazonaws.com/media/1090/Lead_image_48017.jpg",
+      "name": "sanika shiv chavan",
+      "gender": "female",
+      "b_day": "2001/09/20",
+      "class": "6th-B",
+      "roll_number": "10",
+      "gmail": "sanika@gmail.com",
+      "phone": "8787878787",
+      "address": "Lorem ipsum, dolor sit amet consectetur adipisicing.",
+      "enrollment_date": "2015/06/15",
+      "id": 5
+    },
+    {
+      "photo": "https://fadcdn.s3.ap-south-1.amazonaws.com/media/1090/Lead_image_48017.jpg",
+      "name": "sanika shiv chavan",
+      "gender": "female",
+      "b_day": "2001/09/20",
+      "class": "6th-B",
+      "roll_number": "10",
+      "gmail": "sanika@gmail.com",
+      "phone": "8787878787",
+      "address": "Lorem ipsum, dolor sit amet consectetur adipisicing.",
+      "enrollment_date": "2015/06/15",
+      "id": 6
+    },
+    {
+      "photo": "https://fadcdn.s3.ap-south-1.amazonaws.com/media/1090/Lead_image_48017.jpg",
+      "name": "sanika shiv chavan",
+      "gender": "female",
+      "b_day": "2001/09/20",
+      "class": "4th-C",
+      "roll_number": "10",
+      "gmail": "sanika@gmail.com",
+      "phone": "8787878787",
+      "address": "Lorem ipsum, dolor sit amet consectetur adipisicing.",
+      "enrollment_date": "2015/06/15",
+      "id": 7
+    },
+    {
+      "photo": "https://fadcdn.s3.ap-south-1.amazonaws.com/media/1090/Lead_image_48017.jpg",
+      "name": "adsd shiv chavan",
+      "gender": "female",
+      "b_day": "2001/09/20",
+      "class": "6th-B",
+      "roll_number": "10",
+      "gmail": "sanika@gmail.com",
+      "phone": "8787878787",
+      "address": "Lorem ipsum, dolor sit amet consectetur adipisicing.",
+      "enrollment_date": "2015/06/15",
+      "id": 8
+    },
+    {
+      "photo": "https://fadcdn.s3.ap-south-1.amazonaws.com/media/1090/Lead_image_48017.jpg",
+      "name": "sanika shiv chavan",
+      "gender": "female",
+      "b_day": "2001/09/20",
+      "class": "2nt-C",
+      "roll_number": "10",
+      "gmail": "sanika@gmail.com",
+      "phone": "8787878787",
+      "address": "Lorem ipsum, dolor sit amet consectetur adipisicing.",
+      "enrollment_date": "2015/06/15",
+      "id": 9
     }
-  ]
+  ],
+  "auth": [
+    {
+      "name": "Sakshi Jadhav",
+      "email": "sakshisjadhav.120@gmail.com",
+      "password": "123",
+      "id": 1
+    },
+    {
+      "name": "Sakshi Jadhav",
+      "email": "sakahisjadhav@gmail.com",
+      "password": "12345",
+      "id": 2
+    },
+    {
+      "name": "Tiger20",
+      "email": "admin@gmail.com",
+      "password": "9090",
+      "id": 3
+    },
+    {
+      "id": 4
+    },
+    {
+      "name": "",
+      "email": "admin@gmail.com",
+      "password": "12",
+      "id": 5
+    },
+    {
+      "id": 6
+    },
+    {
+      "id": 7
+    },
+    {
+      "name": "Sakshi Jadhav",
+      "email": "sakshisjadhav.120@gmail.com",
+      "password": "123",
+      "id": 8
+    },
+    {
+      "name": "Sakshi Jadhav",
+      "email": "sakshisjadhav.120@gmail.com",
+      "password": "123",
+      "id": 9
+    }
+  ],
+  "books":[
+    {
+    "bookImg":"https://d1csarkz8obe9u.cloudfront.net/posterpreviews/yellow-business-leadership-book-cover-design-template-dce2f5568638ad4643ccb9e725e5d6ff.jpg?ts=1637017516",
+    "author":"aa",
+    "genre":"bb",
+    "name":"The Mind Of A Leader",
+    "id":1
+},
+    {
+
+    "bookImg":"https://www.adobe.com/express/create/cover/media_178ebed46ae02d6f3284c7886e9b28c5bb9046a02.jpeg?width=400&format=jpeg&optimize=medium",
+    "author":"aa",
+    "genre":"bb",
+    "name":"Lunar Story",
+    "id":2
+},
+    {
+    "bookImg":"https://imgv3.fotor.com/images/gallery/Fiction-Book-Covers.jpg",
+    "author":"aa",
+    "genre":"bb",
+    "name":"Last Hope",
+    "id":3
+},
+    {
+    "bookImg":"https://m.media-amazon.com/images/I/41gr3r3FSWL.jpg",
+    "author":"aa",
+    "genre":"bb",
+    "name":"BCDF",
+    "id":4
+},
+    {
+    "bookImg":"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTvcq4KN4eIWKxk5vlSZH3Po_g2e9zPb8q_9g&usqp=CAU",
+    "author":"aa",
+    "genre":"bb",
+    "name":"Our Last Summer",
+    "id":5
+},
+    {
+    "bookImg":"https://marketplace.canva.com/EAFBN69UM-A/1/0/1003w/canva-black-red-vintage-time-book-cover-N4kq526KmFo.jpg",
+    "author":"aa",
+    "genre":"bb",
+    "name":"Time",
+    "id":6
+},
+    {
+    "bookImg":"https://d1csarkz8obe9u.cloudfront.net/posterpreviews/teal-and-orange-fantasy-book-cover-design-template-056106feb952bdfb7bfd16b4f9325c11.jpg?ts=1637018051",
+    "author":"aa",
+    "genre":"bb",
+    "name":"Graham Douglass",
+    "id":7
+},
+    {
+    "bookImg":"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTm33lv0W92j2lTEfjP-AkuRKY1z7vPlKfYbQ&usqp=CAU",
+    "author":"aa",
+    "genre":"bb",
+    "name":"Foetress Blood",
+    "id":8
+},
+    {
+    "bookImg":"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR-vo3rQn1ESDXoMVqJBhwzsLAub_1pV2Cf30EO3YTxnJoJfkON7-mqLmJuVnn-u1FINvw&usqp=CAU",
+    "author":"aa",
+    "genre":"bb",
+    "name":"The Fall of I Romouth",
+    "id":9
+},
+    {
+    "bookImg":"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRsP9uefsQszHl5eMKoyZddXgq-Di7vJRI1OQ&usqp=CAU",
+    "author":"aa",
+    "genre":"bb",
+    "name":"Booth",
+    "id":10
+}
+]
 }

@@ -1,0 +1,67 @@
+.add-data{
+    display: flex;
+    justify-content: center;
+    align-items: center ;
+    margin-top: 20px;
+}
+.flex-contendt{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* books */
+
+.main-card{
+    width: 13rem
+}
+.card-bodys{
+    display: flex;
+    justify-content: space-evenly;
+    align-items: baseline;
+    background-color: gainsboro;
+    padding: 2px;
+    padding: 0px;
+    margin: 0px;
+}
+
+.mid{
+display: flex;
+justify-content: center;
+}
+
+.card-img-top{
+    width: 100%;
+}
+
+/* .form-controls{
+    width: 100%;
+} */
+.centered-search {
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100vw;
+}
+/* footer */
+.footer{
+    margin-top: 10px;
+    padding: 35px;
+    background-color: lightgrey;
+}
+
+.content{
+    display: flex;
+    gap: 6px;
+    justify-content: center;
+    align-items: center;
+}
+
+.bold{
+    font-weight: bold;
+}
+.footer-logo{
+margin-top: 20px;
+  text-align: center;
+}

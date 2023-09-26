@@ -1,70 +1,77 @@
 import React  from 'react'
-import { useDispatch } from "react-redux";
-import { Button, Card, Col, Container, Form, InputGroup, Row } from 'react-bootstrap'
+import { useDispatch, useSelector } from "react-redux";
+import { Button, Card, Col, Container, Form, InputGroup, Row, } from 'react-bootstrap'
 import { StudentActions } from '../redux/Actions/DataActions'
 import { useFormik } from 'formik';
 import * as yup from "yup"
+import { ToastContainer, toast } from 'react-toastify';
 
 export default function AddData() {
   const actionDispatch = useDispatch()
+  const { students} =  useSelector(state => state.allData)
   const formik = useFormik({
     initialValues: {
-      Photo:"https://fadcdn.s3.ap-south-1.amazonaws.com/media/1090/Lead_image_48017.jpg",
-      Name:"sanika shiv chavan",
-      Gender:"",
-      B_day:"2001/09/20",
-      Class:"6th-B",
-      Roll_number:"10",
-      Gmail:"sanika@gmail.com",
-      Phone:"8787878787",
-      Address:"Lorem ipsum, dolor sit amet consectetur adipisicing.",
-      Enrollment_date:"2015/06/15",
+      photo:"https://fadcdn.s3.ap-south-1.amazonaws.com/media/1090/Lead_image_48017.jpg",
+      name:"sanika shiv chavan",
+      gender:"female",
+      b_day:"2001/09/20",
+      class:"6th-B",
+      roll_number:"10",
+      gmail:"sanika@gmail.com",
+      phone:"8787878787",
+      address:"Lorem ipsum, dolor sit amet consectetur adipisicing.",
+      enrollment_date:"2015/06/15",
     },
     validationSchema: yup.object({
-      Photo:yup.string().required("Please provide photo url"),
-      Name:yup.string().required("Please Enter Name"),
-      Gender:yup.string().required("Please select your gender"),
-      B_day:yup.string().required("Please Enter Date of Birth"),
-      Class:yup.string().required("Please Choose Class"),
-      Roll_number:yup.string().required("Please Provide Roll Number"),
-      Gmail:yup.string().email("please enter valid email").required("Please Enter email"),
-      Phone:yup.string().required("Please Enter Number"),
-      Address:yup.string().required("Please Enter Address"),
-      Enrollment_date:yup.string().required("Please Enter Enrollment Date"),
+      photo:yup.string().required("Please provide photo url"),
+      name:yup.string().required("Please Enter Name"),
+      gender:yup.string().required("Please select your gender"),
+      b_day:yup.string().required("Please Enter Date of Birth"),
+      class:yup.string().required("Please Choose Class"),
+      roll_number:yup.string().required("Please Provide Roll Number"),
+      gmail:yup.string().email("please enter valid email").required("Please Enter email"),
+      phone:yup.string().required("Please Enter Number"),
+      address:yup.string().required("Please Enter Address"),
+      enrollment_date:yup.string().required("Please Enter Enrollment Date"),
     }),
     onSubmit: (values,{ resetForm }) => {
       actionDispatch(StudentActions(values))
       resetForm();
     }
   })
-
+  const notify = () => {
+    if (students === true) {
+      toast("Your Data add sucessfully 😊");
+    }
+  }
 
   return (<>
-  <Container className='py-2'>
-    <Row>
-        <Col className='col-sm-6 offset-sm-3 col-lg-8' >
-        <Card style={{ width: '80%' }}>
-            <Card.Header><Card.Title>Add Students Data</Card.Title></Card.Header>
+  <Container >
+    <Row className='add-data'>
+        <Col className='col-md-9' >
+        <Card>
+            <Card.Header>
+              <Card.Title style={{textAlign:"center"}}>Add Students Data</Card.Title>
+              </Card.Header>
             <Card.Body>
      <Form onSubmit={formik.handleSubmit}>
-
      <Form.Group className="mb-3">
              <Form.Label>Photo</Form.Label>
              <Form.Control type="text" placeholder="Your Photo url"
-             id="Photo"
-             name="Photo"
-             value={formik.values.Photo}
+             id="photo"
+             name="photo"
+             value={formik.values.photo}
              onChange={formik.handleChange}
              onBlur={formik.handleBlur}
              className={
-                    formik.errors.Photo &&
-                    formik.touched.Photo &&
+                    formik.errors.photo &&
+                    formik.touched.photo &&
                     "is-invalid"}
              />
              
              <Form.Text className="invalid-feedback">
              {
-                    formik.errors.Photo
+                    formik.errors.photo
                   }
              </Form.Text>
                </Form.Group>
@@ -72,30 +79,30 @@ export default function AddData() {
   <Form.Group className="mb-3">
                 <Form.Label>Full Name</Form.Label>
                 <Form.Control type="text" placeholder="Enter Your name"
-                id="Name"
-                name="Name"
-                value={formik.values.Name}
+                id="name"
+                name="name"
+                value={formik.values.name}
                 onChange={formik.handleChange}
                 onBlur={formik.handleBlur}
                 className={
-                       formik.errors.Name &&
-                       formik.touched.Name &&
+                       formik.errors.name &&
+                      formik.touched.name &&
                        "is-invalid"}
                 />
                 <Form.Text className="invalid-feedback">
                 {
-                    formik.errors.Name
+                    formik.errors.name
                   }
                 </Form.Text>
       </Form.Group>
 
 <Form.Group className="mb-3">
 <Form.Label>Gender </Form.Label>
-<InputGroup>
+<InputGroup value="">
 <Form.Check
             inline
             label="female"
-            name="Gender"
+            name="gender"
             type='radio'
             id="custom-switch"
             value='female'
@@ -106,7 +113,7 @@ export default function AddData() {
 <Form.Check
             inline
             label="male"
-            name="Gender"
+            name="gender"
             type='radio'
             value='male'
             id="custom-switch"
@@ -118,7 +125,7 @@ export default function AddData() {
             inline
             label="others"
             value='others'
-            name="Gender"
+            name="gender"
             type='radio'
             id="custom-switch"
             onChange={formik.handleChange}
@@ -126,7 +133,7 @@ export default function AddData() {
             />
             </InputGroup>
            <Form.Text className="invalid-feedback">
-                  { formik.errors.Gender}
+                  { formik.errors.gender}
                 </Form.Text>
         </Form.Group>
         
@@ -134,31 +141,31 @@ export default function AddData() {
                 <Form.Label>D.O.B</Form.Label>
                 <Form.Control
                 type="yyyy/mm/dd"
-                name="B_day"
-                id="B_day"
+                name="b_day"
+                id="b_day"
                 placeholder="D.O.B"
-value={formik.values.B_day}
+value={formik.values.b_day}
 onChange={formik.handleChange}
 onBlur={formik.handleBlur}
 className={
-  formik.errors.B_day &&
-  formik.touched.B_day &&
+  formik.errors.b_day &&
+  formik.touched.b_day &&
   "is-invalid"}/>
                 <Form.Text className="invalid-feedback">
-                  { formik.errors.B_day}
+                  { formik.errors.b_day}
                 </Form.Text>
       </Form.Group>
 
       <Form.Group className="mb-3">
             <Form.Select  
-            name='Class'
-            id='Class'
+            name='class'
+            id='class'
             value={formik.values.Class}
             onChange={formik.handleChange}
             onBlur={formik.handleBlur}
             className={
-              formik.errors.Class &&
-              formik.touched.Class &&
+              formik.errors.class &&
+              formik.touched.class &&
               "is-invalid"}
             >
                  <option value="">Choose the class</option>
@@ -195,7 +202,7 @@ className={
 
            </Form.Select>
            <Form.Text className="invalid-feedback">
-                  { formik.errors.Class}
+                  { formik.errors.class}
                 </Form.Text>
                 </Form.Group>
 
@@ -204,16 +211,16 @@ className={
                 <Form.Control type="number" placeholder="Enter Roll number"
                 name='Roll_number'
                 id='Roll_number'
-                value={formik.values.Roll_number}
+                value={formik.values.roll_number}
                 onChange={formik.handleChange}
                 onBlur={formik.handleBlur}
                 className={
-                  formik.errors.Roll_number &&
-                  formik.touched.Roll_number &&
+                  formik.errors.roll_number &&
+                  formik.touched.roll_number &&
                   "is-invalid"}
                 />
                 <Form.Text className="invalid-feedback">
-                 {formik.errors.Roll_number}
+                 {formik.errors.roll_number}
                  </Form.Text>
       </Form.Group>
 
@@ -222,52 +229,52 @@ className={
                 <Form.Control type="text" placeholder="Enter your Gmail"
                   name='Gmail'
                   id='Gmail'
-                value={formik.values.Gmail}
+                value={formik.values.gmail}
                 onChange={formik.handleChange}
                 onBlur={formik.handleBlur}
                 className={
-                  formik.errors.Gmail &&
-                  formik.touched.Gmail &&
+                  formik.errors.gmail &&
+                  formik.touched.gmail &&
                   "is-invalid"}
                 />
                 <Form.Text className="invalid-feedback">
-                {formik.values.Gmail}
+                {formik.values.gmail}
                  </Form.Text>
       </Form.Group>
 
            <Form.Group className="mb-3">
                 <Form.Label>Phone, Whatsapp - Number </Form.Label>
                 <Form.Control type="number" placeholder="Enter Your number"
-                name='Phone'
-                id='Phone'
-              value={formik.values.Phone}
+                name='phone'
+                id='phone'
+              value={formik.values.phone}
               onChange={formik.handleChange}
               onBlur={formik.handleBlur}
               className={
-                formik.errors.Phone &&
-                formik.touched.Phone &&
+                formik.errors.phone &&
+                formik.touched.phone &&
                 "is-invalid"}
                 />
                 <Form.Text className="invalid-feedback">
-                    {formik.errors.Phone} 
+                    {formik.errors.phone} 
                  </Form.Text>
       </Form.Group>
 
            <Form.Group className="mb-3">
                 <Form.Label>Address</Form.Label>
                 <Form.Control as="textarea" rows={2}
-                name='Address'
-                id='Address'
-              value={formik.values.Address}
+                name='address'
+                id='address'
+              value={formik.values.address}
               onChange={formik.handleChange}
               onBlur={formik.handleBlur}
               className={
-                formik.errors.Address &&
-                formik.touched.Address &&
+                formik.errors.address &&
+                formik.touched.address &&
                 "is-invalid"}
                 />
                 <Form.Text className="invalid-feedback">
-                {formik.errors.Address}
+                {formik.errors.address}
                  </Form.Text>
       </Form.Group>
 
@@ -275,14 +282,14 @@ className={
                 <Form.Label>Enrollment date </Form.Label>
                 <Form.Control
                  type="yyyy/mm/dd"
-                name='Enrollment_date'
-                id='Enrollment_date'
-              value={formik.values.Enrollment_date}
+                name='enrollment_date'
+                id='enrollment_date'
+              value={formik.values.enrollment_date}
               onChange={formik.handleChange}
               onBlur={formik.handleBlur}
               className={
-                formik.errors.Enrollment_date &&
-                formik.touched.Enrollment_date &&
+                formik.errors.enrollment_date &&
+                formik.touched.enrollment_date &&
                 "is-invalid"}
                 
                 />
@@ -291,9 +298,10 @@ className={
                  </Form.Text>
       </Form.Group>
 
-      <Button variant="primary" type="submit">
+      <Button variant="primary" type="submit" onClick={notify}>
                                     Submit Student Data
                                 </Button>
+                                <ToastContainer />
 </Form>
       </Card.Body>
         </Card>
