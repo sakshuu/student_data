@@ -11,6 +11,10 @@
 }
 
 /* books */
+.logo{
+    width: 30px;
+    border-radius: 50%;
+}
 
 .main-card{
     width: 13rem
@@ -64,4 +68,28 @@ justify-content: center;
 .footer-logo{
 margin-top: 20px;
   text-align: center;
+}
+
+/* login */
+.t-white{
+    color: white;
+}
+.main{
+    position: relative !important;
+}
+.card-login{
+    position: absolute !important;
+    top: 10% !important;
+    left: 50% !important;
+    /* transform: translateX(-7%) !important; */
+    background-color: rgba(255, 255, 255, 0.2) !important;
+    padding: 20px;
+}
+.bg-login{
+    width: 100vw !important;
+    height: 100vh;
+    object-fit: cover;
+}
+.card-login{
+width: 550px !important;
 }
