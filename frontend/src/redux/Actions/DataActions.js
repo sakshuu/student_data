@@ -24,7 +24,7 @@ export const ShowStudentActions = () => async dispatch => {
 
 export const ShowSingleDataActions = (id) => async dispatch => {
     try {
-        // console.log(id);
+        console.log(id);
         dispatch({ type: SHOW_SINGLE_STUDENT_REQUEST })
         const { data } = await axios.get(`/students/${id}`)
         console.log(data);
